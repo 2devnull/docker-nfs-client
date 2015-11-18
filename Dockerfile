@@ -29,6 +29,7 @@ ENV MOUNT_OPTIONS nfsvers=4
 ENV MOUNTPOINT /mnt/nfs-1
 
 RUN apk update && apk add --update nfs-utils && rm -rf /var/cache/apk/*
+RUN rm /sbin/halt /sbin/poweroff /sbin/reboot
 
 # would only be used if extending an running a different main process in fg
 # RUN rc-update add nfs
